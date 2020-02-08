@@ -1,20 +1,97 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div class="container">
+  <div style=" margin-top:50px;">
+    <ul>
+      <div class="row">
+        
+        <li style="list-style: none; margin: 20px;" ngbDropdown class="col-lg-5 col-md-5">
+          <ng-select style="min-width: 50px; max-width: 450px; " [items]="ramDropDown" [multiple]="true"
+            (click)="startSearch()" [closeOnSelect]="true" [searchable]="true" bindLabel="name"
+            placeholder="Select Rams" [(ngModel)]="rams">
+          </ng-select>
+        </li>
 
+        <li style="list-style: none; margin: 20px;" ngbDropdown class="col-lg-5 col-md-5">
+          <ng-select style="min-width: 50px; max-width: 450px;" [items]="cpuDropDown" [multiple]="true"
+            (click)="startSearch()" [closeOnSelect]="true" [searchable]="true" bindLabel="name"
+            placeholder="Select cpus" [(ngModel)]="cpus">
+          </ng-select>
+        </li>
+      </div>
+      <div class="row">
+        <li style="list-style: none; margin: 20px;" ngbDropdown display="dynamic" placement="bottom-right"
+          class="col-lg-5 col-md-5">
+          <ng-select style="min-width: 50px; max-width: 450px;" [items]="opSysDropDown" [multiple]="true"
+            (click)="startSearch()" [closeOnSelect]="true" [searchable]="true" bindLabel="name"
+            placeholder="Select opsys" [(ngModel)]="opsys">
+          </ng-select>
+        </li>
+
+        <li style="list-style: none; margin: 20px;" ngbDropdown display="" placement="bottom-right"
+          class="col-lg-5 col-md-5">
+          <ng-select style="min-width: 50px; max-width: 450px;" [items]="inchesDropDown" [multiple]="true"
+            (click)="startSearch()" [closeOnSelect]="true" [searchable]="true" bindLabel="name"
+            placeholder="Select inches" [(ngModel)]="inches">
+          </ng-select>
+        </li>
+      </div>
+    </ul>
+    <div class="row">
+      <fieldset class="form-inline col-lg-12 col-md-11">
+        <div class="form-group" style="margin-left: 45px;">
+          <!-- <label for="typeahead-http">Search for a wiki page:</label> -->
+          <input style="width: 923px;" id="typeahead-http" type="text" class="form-control mx-sm-3"
+            [class.is-invalid]="searchFailed" [(ngModel)]="searchKey" (keyup.enter)="startSearch()"
+            [ngbTypeahead]="search" placeholder="Type Company or Product" />
+          <small *ngIf="searching" class="form-text text-muted">searching...</small>
+          <div class="invalid-feedback" *ngIf="searchFailed">Sorry, suggestions could not be loaded.</div>
+        </div>
+      </fieldset>
+    </div>
+  </div>
+</div>
+<hr>
+<div class="tb-data">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col" sortable="company" (sort)="onSort($event)">Company</th>
+        <th scope="col" sortable="product" (sort)="onSort($event)">Product</th>
+        <th scope="col" sortable="type" (sort)="onSort($event)">Type</th>
+        <th scope="col" sortable="resolution" (sort)="onSort($event)">Resolution</th>
+        <th scope="col" sortable="cpu" (sort)="onSort($event)">CPU</th>
+        <th scope="col" sortable="ram" (sort)="onSort($event)">RAM</th>
+        <th scope="col" sortable="memory" (sort)="onSort($event)">Memory</th>
+        <th scope="col" sortable="opSys" (sort)="onSort($event)">OpSys</th>
+        <th scope="col" sortable="weight" (sort)="onSort($event)">Weight</th>
+        <th scope="col" sortable="price" (sort)="onSort($event)">Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let element of storeData">
+        <td>{{ element.company }}</td>
+        <td>{{ element.product }}</td>
+        <td>{{ element.type }}</td>
+        <td>{{ element.resolution }}</td>
+        <td>{{ element.cpu }}</td>
+        <td>{{ element.ram }}</td>
+        <td>{{ element.memory }}</td>
+        <td>{{ element.opSys }}</td>
+        <td>{{ element.weight }}</td>
+        <td>{{ element.price }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div style="width: 85% ;margin: auto;">
+  <ngb-pagination 
+    [collectionSize]="totalCount"
+    [(page)]="page" 
+    [pageSize]="limit"
+    (pageChange)="startSearch()"
+    [maxSize]="5" 
+    [rotate]="true" 
+    [boundaryLinks]="true" 
+    aria-label="Default pagination">
+  </ngb-pagination>
+</div>
