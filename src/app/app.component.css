@@ -1,0 +1,32 @@
+.allInput{
+    margin-top:50px;
+}
+
+.allList{
+    list-style: none;
+    margin: 20px;
+}
+.searchInput{
+    width: 923px;
+}
+.tableST{
+    width: 85% ;
+    margin: auto;   
+}
+.paginator{
+    width: 85% ;
+    margin: auto;   
+}
+.selectList{
+    min-width: 50px;
+    max-width: 450px;
+}
+.searchEdit{
+    margin-left: 45px;
+}
+
+.cardElement{
+    width: 30rem;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
