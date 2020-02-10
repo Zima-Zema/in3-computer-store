@@ -10,7 +10,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 ```sh
 $ docker-compose up 
 ```
-Consider run backend server `http://localhost:4200/`
+Consider run backend server `http://localhost:5300/` then 
 Navigate to `http://localhost:4200/`
 
 ## Code scaffolding
