@@ -59,8 +59,6 @@ export class AppComponent implements OnInit {
     )
 
     startSearch(page?: number) {
-      console.log(this.page);
-      
       this.page = page || this.page;
       const query = {
         skip: (this.page - 1) * this.limit,

@@ -4,10 +4,7 @@
 
 export const environment = {
   production: false,
-  //rootUrl: 'http://localhost:5300/api/in3service'
-  rootUrl:'https://in3service.herokuapp.com/api/in3service'
-
-
+  rootUrl: 'http://localhost:5300/api/in3service'
 };
 
 /*

@@ -17,9 +17,8 @@ const PARAMS = new HttpParams({
 })
 export class StoreService {
   public rootUrl: String = environment.rootUrl;
-
   constructor(private http: HttpClient, ) { }
-
+  
   findDropDowns() {
     return this.http.get(`${this.rootUrl}/store/filters`);
   }
@@ -28,7 +27,6 @@ export class StoreService {
     if (term === '') {
       return of([]);
     }
-
     return this.http
       .get(`${this.rootUrl}/store/hints`, { params: PARAMS.set('search', term) }).pipe(
         map(response => {
@@ -39,17 +37,13 @@ export class StoreService {
 
   startSearch(query) {
     let params = new HttpParams();
-
     Object.keys(query).forEach(key => {
       if (query[key] instanceof Array) {
         (<string[]>query[key]).forEach(item => {
           params = params.append(key, item);
         });
-
         return;
       }
-
-      console.log(`${key}: ${query[key]}`)
       params = params.append(key, (<number>query[key]).toString());
     });
 

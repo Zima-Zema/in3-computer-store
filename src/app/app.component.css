@@ -1,32 +1,36 @@
-.allInput{
-    margin-top:50px;
+.in-input {
+  margin: 15px 0;
 }
-
-.allList{
-    list-style: none;
-    margin: 20px;
+.searchEdit {
+  margin-left: 45px;
 }
-.searchInput{
-    width: 923px;
+.table thead th{
+    color: blue;
 }
-.tableST{
-    width: 85% ;
-    margin: auto;   
+.pagination {
+    display: flex;
+    justify-content: center;
 }
-.paginator{
-    width: 85% ;
-    margin: auto;   
+.cardElement {
+  margin-bottom: 24px;
 }
-.selectList{
-    min-width: 50px;
-    max-width: 450px;
+.empty-message{
+    margin: 40px;
+    color: #999;
 }
-.searchEdit{
-    margin-left: 45px;
+/* mobile card styles */
+.card-body {
+  border-bottom: 1px solid #00000024;
+  background: #efefef;
 }
-
-.cardElement{
-    width: 30rem;
-    margin-bottom: 10px;
-    margin-top: 10px;
+.card-title {
+  font-weight: 600;
+}
+.card-text {
+  font-weight: 500;
+}
+.label {
+  font-weight: 600;
+  color: blue;
+  margin-right: 4px;
 }

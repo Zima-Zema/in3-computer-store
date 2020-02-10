@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+  padding-top: 80px;   
+}
+.navbar{
+  min-height: 56px;
+}
+@media(min-width: 1280px){
+  .container-fluid {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
