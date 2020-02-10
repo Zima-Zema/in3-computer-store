@@ -1,0 +1,13 @@
+version: '3'
+services:
+  node:
+    tty: true
+    stdin_open: true
+    container_name: in3-computer-store
+    build:
+      context: .
+    volumes:
+      - .:/var/code:rw
+    ports:
+      - 4200:4200
+    entrypoint: './startup.sh'

@@ -47,17 +47,17 @@
   <table class="table table-striped tableST">
     <thead>
       <tr>
-        <th scope="col" sortable="company" (sort)="onSort($event)">Company</th>
-        <th scope="col" sortable="product" (sort)="onSort($event)">Product</th>
-        <th scope="col" sortable="type" (sort)="onSort($event)">Type</th>
-        <th scope="col" sortable="resolution" (sort)="onSort($event)">Resolution</th>
-        <th scope="col" sortable="cpu" (sort)="onSort($event)">CPU</th>
-        <th scope="col" sortable="ram" (sort)="onSort($event)">RAM</th>
-        <th scope="col" sortable="memory" (sort)="onSort($event)">Memory</th>
-        <th scope="col" sortable="opSys" (sort)="onSort($event)">OpSys</th>
-        <th scope="col" sortable="weight" (sort)="onSort($event)">Weight</th>
-        <th scope="col" sortable="price" (sort)="onSort($event)">Price</th>
-      </tr>
+        <th scope="col">Company</th>
+        <th scope="col">Product</th>
+        <th scope="col">Type</th>
+        <th scope="col">Resolution</th>
+        <th scope="col"> CPU</th>
+        <th scope="col"> RAM</th>
+        <th scope="col">Memory</th>
+        <th scope="col">OpSys</th>
+        <th scope="col">Weight</th>
+        <th scope="col">Price</th>
+      </tr> 
     </thead>
     <tbody>
       <tr *ngFor="let element of storeData">

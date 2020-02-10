@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { of } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 
 const PARAMS = new HttpParams({
   fromObject: {
@@ -15,9 +16,9 @@ const PARAMS = new HttpParams({
   providedIn: 'root'
 })
 export class StoreService {
-  public rootUrl: String = 'http://localhost:5300/api/in3service';
+  public rootUrl: String = environment.rootUrl;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, ) { }
 
   findDropDowns() {
     return this.http.get(`${this.rootUrl}/store/filters`);
