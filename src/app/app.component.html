@@ -50,10 +50,12 @@
               <th scope="col">Company</th>
               <th scope="col">Product</th>
               <th scope="col">Type</th>
+              <th scope="col">Inches</th>
               <th scope="col">Resolution</th>
               <th scope="col"> CPU</th>
               <th scope="col"> RAM</th>
               <th scope="col">Memory</th>
+              <th scope="col">Graphics</th>
               <th scope="col">OpSys</th>
               <th scope="col">Weight</th>
               <th scope="col">Price</th>
@@ -64,13 +66,15 @@
               <td>{{ element.company }}</td>
               <td>{{ element.product }}</td>
               <td>{{ element.type }}</td>
+              <td>{{ element.inches }}</td>
               <td>{{ element.resolution }}</td>
               <td>{{ element.cpu }}</td>
               <td>{{ element.ram }}</td>
               <td>{{ element.memory }}</td>
+              <td>{{ element.graphics }}</td>
               <td>{{ element.opSys }}</td>
               <td>{{ element.weight }}</td>
-              <td>{{ element.price }}</td>
+              <td>{{ element.price | currency:'USD'}}</td>
             </tr>
           </tbody>
         </table>

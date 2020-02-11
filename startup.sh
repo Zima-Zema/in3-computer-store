@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Downloading Dependencies"
-npm install
+yes y | npm install
 
 
 echo "Starting App"
