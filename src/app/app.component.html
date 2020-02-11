@@ -41,7 +41,7 @@
 
   <hr>
 
-  <div class="row" *ngIf="storeData.length > 0">
+  <div class="row" *ngIf="storeData?.length > 0">
     <div class="col-md-12">
       <div class="tb-data d-none d-lg-block">
         <table class="table table-striped tableST">
@@ -84,7 +84,7 @@
 
 </div>
 
-<div class="container-fluid d-lg-none" *ngIf="storeData.length > 0">
+<div class="container-fluid d-lg-none" *ngIf="storeData?.length > 0">
   <div *ngFor="let element of storeData" class="card cardElement">
     <div class="card-body">
       <h5 class="card-title">{{element.company}}</h5>
@@ -98,14 +98,14 @@
   </div>
 </div>
 
-<div class="pagination" *ngIf="storeData.length > 0">
+<div class="pagination" *ngIf="storeData?.length > 0">
   <ngb-pagination [collectionSize]="totalCount" [(page)]="page" [pageSize]="limit" (pageChange)="startSearch()"
     [maxSize]="5" [rotate]="true" [boundaryLinks]="true" aria-label="Default pagination">
   </ngb-pagination>
 </div>
 
 <!-- empty state message -->
-<div class="row" *ngIf="storeData.length === 0">
+<div class="row" *ngIf="storeData?.length === 0">
   <div class="col-md-12 text-center empty-message">
     Sorry There's no data matching your filters...
   </div>

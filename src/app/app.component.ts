@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
   opsys: string[] = [];
   inches: string[] = [];
   searchKey: string = '';
-  storeData: [];
+  storeData: [] = [];
   totalCount: number = 0;
   constructor(private _service: StoreService) { }
 
