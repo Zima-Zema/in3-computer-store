@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Downloading Dependencies"
-npm install --production
+yes y | npm install --production
 
 
 echo "Building for Production"
